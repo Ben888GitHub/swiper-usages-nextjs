@@ -14,6 +14,7 @@ import 'swiper/css/scrollbar';
 
 import { useState } from 'react';
 import NavButton from './NavButton';
+import { swiperBreakpoints } from '@/utils/swiperBreakpoints';
 
 const ApiNavigation = ({ posts }) => {
 	const [beginningIndex, setBeginningIndex] = useState(false);
@@ -34,28 +35,7 @@ const ApiNavigation = ({ posts }) => {
 					}}
 					pagination={{ clickable: true }}
 					scrollbar={{ draggable: true }}
-					breakpoints={{
-						300: {
-							slidesPerView: 2,
-							spaceBetween: 10
-						},
-						640: {
-							slidesPerView: 2,
-							spaceBetween: 20
-						},
-						768: {
-							slidesPerView: 2,
-							spaceBetween: 40
-						},
-						1024: {
-							slidesPerView: 3,
-							spaceBetween: 10
-						},
-						1025: {
-							slidesPerView: 4,
-							spaceBetween: 0
-						}
-					}}
+					breakpoints={swiperBreakpoints}
 					onSwiper={(swiper) => {
 						swiper.isBeginning && setBeginningIndex(swiper.isBeginning);
 					}}
@@ -72,7 +52,6 @@ const ApiNavigation = ({ posts }) => {
 									priority
 									height={750}
 									width={500}
-									// src={`https://image.tmdb.org/t/p/w500${poster}`}
 									src={post.image}
 									alt={post.name}
 									className="rounded-t-lg cursor-pointer relative"
