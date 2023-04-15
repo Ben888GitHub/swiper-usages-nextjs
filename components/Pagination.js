@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import ReactPaginate from 'react-paginate';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2';
 
@@ -51,4 +51,4 @@ const Pagination = ({ pageCount, currentPage, paginationHandler }) => {
 	);
 };
 
-export default Pagination;
+export default memo(Pagination);

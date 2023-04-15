@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import NavButton from './NavButton';
 import { swiperBreakpoints } from '@/utils/swiperBreakpoints';
 
@@ -76,4 +76,4 @@ const ApiNavigation = ({ posts }) => {
 	);
 };
 
-export default ApiNavigation;
+export default memo(ApiNavigation);
